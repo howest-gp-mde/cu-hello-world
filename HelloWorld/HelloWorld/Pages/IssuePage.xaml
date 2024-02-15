@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.Pages.IssuePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Behandeling issue #123" FontSize="Large"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Set product state" x:Name="btnState" Clicked="BtnState_Clicked"></Button>
+            <Button Text="Fix it!" x:Name="btnFix"
+                    Clicked="BtnFix_Clicked"></Button>
+            <Button Text="Keer ne keer were" x:Name="btnBack" Clicked="BtnBack_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

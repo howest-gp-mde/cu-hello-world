@@ -1,4 +1,5 @@
-﻿using HelloWorld.Services;
+﻿using HelloWorld.Pages;
+using HelloWorld.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,11 @@ namespace HelloWorld
             items.Add("No");
             lstAnswers.ItemsSource = null;
             lstAnswers.ItemsSource = items;
+        }
+
+        private async void BtnGoToIssue_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new IssuePage());
         }
     }
 }

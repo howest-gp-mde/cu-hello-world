@@ -35,7 +35,7 @@
         <ListView x:Name="lstAnswers">
             
         </ListView>
-        
+        <Button Text="Go to issue nr 123" x:Name="btnGoToIssue" Clicked="BtnGoToIssue_Clicked"></Button>
     </StackLayout>
 
 </ContentPage>
