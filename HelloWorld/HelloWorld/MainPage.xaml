@@ -8,13 +8,15 @@
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
 
-        <Grid>
+        <Grid HeightRequest="150">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="100"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Entry x:Name="txtName" Grid.Column="0"></Entry>
-            <Button x:Name="btnSave" Grid.Column="1" Text="Toevoegen"></Button>
+            <Button x:Name="btnSave" Grid.Column="1" Text="Toevoegen" 
+                    Clicked="BtnSave_Clicked"
+                    ></Button>
         </Grid>
 
         <Grid>
@@ -23,11 +25,16 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
 
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnYes" Text="Ja" Grid.Column="0"></Button>
-            <Button x:Name="btnNo" Text="Nee" Grid.Column="1"></Button>
+            <Button x:Name="btnYes" Text="Ja" Grid.Column="0"
+                    Clicked="BtnYes_Clicked"></Button>
+            <Button x:Name="btnNo" Text="Nee" Grid.Column="1"
+                    Clicked="BtnNo_Clicked"
+                    ></Button>
         </Grid>
-        
-        
+
+        <ListView x:Name="lstAnswers">
+            
+        </ListView>
         
     </StackLayout>
 

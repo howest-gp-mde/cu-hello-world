@@ -23,7 +23,29 @@ namespace HelloWorld
             stkMain.Children.Add(lblNewLabel);
 
             var msgService = DependencyService.Get<IMessageService>();
-            lblWelcome.Text = msgService.GetWelcomeMessage();
+            // lblWelcome.Text = msgService.GetWelcomeMessage();
+        }
+
+        private List<string> items = new List<string>();
+        private void BtnSave_Clicked(object sender, EventArgs e)
+        {
+            items.Add(txtName.Text);
+            lstAnswers.ItemsSource = null;
+            lstAnswers.ItemsSource = items;
+        }
+
+        private void BtnYes_Clicked(object sender, EventArgs e)
+        {
+            items.Add("Yes");
+            lstAnswers.ItemsSource = null;
+            lstAnswers.ItemsSource = items;
+        }
+
+        private void BtnNo_Clicked(object sender, EventArgs e)
+        {
+            items.Add("No");
+            lstAnswers.ItemsSource = null;
+            lstAnswers.ItemsSource = items;
         }
     }
 }
