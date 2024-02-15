@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.MainPage">
+
+    <StackLayout x:Name="stkMain" Orientation="Vertical">
+        <Frame BackgroundColor="#aaeeaa" Padding="24" CornerRadius="10" BorderColor="Black">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="txtName" Grid.Column="0"></Entry>
+            <Button x:Name="btnSave" Grid.Column="1" Text="Toevoegen"></Button>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnYes" Text="Ja" Grid.Column="0"></Button>
+            <Button x:Name="btnNo" Text="Nee" Grid.Column="1"></Button>
+        </Grid>
+        
+        
+        
+    </StackLayout>
+
+</ContentPage>
