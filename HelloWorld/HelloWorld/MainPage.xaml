@@ -19,7 +19,7 @@
                     ></Button>
         </Grid>
 
-        <Grid>
+        <Grid HeightRequest="150">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
