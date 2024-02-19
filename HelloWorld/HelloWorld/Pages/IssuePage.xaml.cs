@@ -12,9 +12,19 @@ namespace HelloWorld.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IssuePage : ContentPage
     {
-        public IssuePage()
+        private int _issueNumber;
+        private const string ISSUE_NUMBER = "issue_number";
+        public IssuePage(int issueNumber)
         {
             InitializeComponent();
+            _issueNumber = issueNumber;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            lblIssue.Text = $"Behandeling issue #{_issueNumber}";
         }
 
         private async void BtnFix_Clicked(object sender, EventArgs e)
@@ -25,6 +35,8 @@ namespace HelloWorld.Pages
 
         private async void BtnBack_Clicked(object sender, EventArgs e)
         {
+            _issueNumber++;
+            Application.Current.Properties[ISSUE_NUMBER] = _issueNumber;
             await Navigation.PopAsync();
         }
 
