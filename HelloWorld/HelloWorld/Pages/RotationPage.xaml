@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.Pages.RotationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BindingContext="{x:Reference sldRotation}">
+                <Label 
+                    x:Name="lblText"
+                    Text="TEXT"
+                    VerticalOptions="EndAndExpand" 
+                    HorizontalOptions="Center"
+                    FontSize="{Binding Path=Value}"
+                    
+                    Rotation="{Binding Path=Value}"
+                    />
+                <BoxView Color="#800000FF" WidthRequest="180"
+                         HeightRequest="40"
+                         HorizontalOptions="Center"
+                         VerticalOptions="StartAndExpand"
+                         Rotation="{Binding Path=Value}"
+                         >
+                    
+                </BoxView>
+            </StackLayout>
+            <Slider x:Name="sldRotation" Maximum="360" 
+                    VerticalOptions="CenterAndExpand"
+                   
+                    >
+            </Slider> 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
