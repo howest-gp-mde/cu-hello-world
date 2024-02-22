@@ -52,6 +52,7 @@
             
         </ListView>
         <Button Text="Go to issue nr 123" x:Name="btnGoToIssue" Clicked="BtnGoToIssue_Clicked"></Button>
+        <!--<Button Text="Go to rotationPage" x:Name="btnGoToRotationPage" Clicked="BtnGoToRotation_Clicked"></Button>-->
     </StackLayout>
 
 </ContentPage>

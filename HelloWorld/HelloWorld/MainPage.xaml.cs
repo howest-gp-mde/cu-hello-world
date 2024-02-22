@@ -78,6 +78,11 @@ namespace HelloWorld
         private async void BtnGoToIssue_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new IssuePage(issueNumber));
-        }
+        }  
+
+        //private async void BtnGoToRotation_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new RotationPage());
+        //}
     }
 }
