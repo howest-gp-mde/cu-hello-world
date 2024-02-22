@@ -82,7 +82,7 @@ namespace HelloWorld
 
         private async void BtnGoToRotation_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RotationPage());
+            await Navigation.PushAsync(new ItemsPage());
         }
     }
 }

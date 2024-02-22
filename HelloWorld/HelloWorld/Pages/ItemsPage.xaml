@@ -4,9 +4,21 @@
              x:Class="HelloWorld.Pages.ItemsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="lstItems">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Article.ImageUrl}" WidthRequest="250" Aspect="AspectFit"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding SerialNumber}"></Label>
+                                    <Label Text="{Binding Article.Name}" FontSize="Header"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
