@@ -7,15 +7,15 @@
 		<Setter Property="FontSize" Value="Medium"></Setter>
 	</Style>
 	<Style TargetType="Button" BasedOn="{StaticResource baseButtonStyle}">
-		<Setter Property="BackgroundColor" Value="#aaeeaa"></Setter>
+		<Setter Property="BackgroundColor" Value="{StaticResource primary}"></Setter>
 		<Setter Property="TextColor" Value="Gray"></Setter>
 		<Setter Property="BorderColor" Value="#55ee55"></Setter>
 
 	</Style>
 
 	<Style TargetType="Button" x:Key="btnPrimary" BasedOn="{StaticResource baseButtonStyle}">
-		<Setter Property="BackgroundColor" Value="BlanchedAlmond"></Setter>
+		<Setter Property="BackgroundColor" Value="{StaticResource secondary}"></Setter>
 		<Setter Property="TextColor" Value="Gray"></Setter>
-		<Setter Property="BorderColor" Value="Blue"></Setter>
+		<Setter Property="BorderColor" Value="BlanchedAlmond"></Setter>
 	</Style>
 </ResourceDictionary>
