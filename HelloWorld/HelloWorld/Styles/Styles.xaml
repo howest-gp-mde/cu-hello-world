@@ -18,4 +18,8 @@
 		<Setter Property="TextColor" Value="Gray"></Setter>
 		<Setter Property="BorderColor" Value="BlanchedAlmond"></Setter>
 	</Style>
+
+    <Style TargetType="Label" x:Key="h1">
+        <Setter Property="FontSize" Value="32"></Setter>
+    </Style>
 </ResourceDictionary>

@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:HelloWorld.Domain.Models"
-             x:Class="HelloWorld.Pages.ItemsPage">
+             xmlns:viewmodels="clr-namespace:HelloWorld.ViewModels"
+             x:Class="HelloWorld.Pages.ItemsPage" >
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lstItems" x:DataType="models:Item">
+            <Label Text="{Binding Title}" Style="{StaticResource h1}"></Label>
+            <ListView x:Name="lstItems" ItemsSource="{Binding Items}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
