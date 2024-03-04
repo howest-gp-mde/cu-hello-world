@@ -1,5 +1,6 @@
 ﻿using HelloWorld.Pages;
 using HelloWorld.Services;
+using HelloWorld.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,12 +20,16 @@ namespace HelloWorld
         {
             InitializeComponent();
 
-            Label lblNewLabel = new Label();
-            lblNewLabel.Text = "huppeldepup";
-            lblNewLabel.BackgroundColor = Color.YellowGreen;
-            lblNewLabel.TextColor = Color.Blue;
+            MainViewModel model = new MainViewModel();
+            this.BindingContext = model;
 
-            stkMain.Children.Add(lblNewLabel);
+
+            //Label lblNewLabel = new Label();
+            //lblNewLabel.Text = "huppeldepup";
+            //lblNewLabel.BackgroundColor = Color.YellowGreen;
+            //lblNewLabel.TextColor = Color.Blue;
+
+            //stkMain.Children.Add(lblNewLabel);
 
             var msgService = DependencyService.Get<IMessageService>();
             // lblWelcome.Text = msgService.GetWelcomeMessage();
@@ -54,26 +59,11 @@ namespace HelloWorld
         }
 
         private List<string> items = new List<string>();
-        private void BtnSave_Clicked(object sender, EventArgs e)
-        {
-            items.Add(txtName.Text);
-            lstAnswers.ItemsSource = null;
-            lstAnswers.ItemsSource = items;
-        }
+        
 
-        private void BtnYes_Clicked(object sender, EventArgs e)
-        {
-            items.Add("Yes");
-            lstAnswers.ItemsSource = null;
-            lstAnswers.ItemsSource = items;
-        }
+        
 
-        private void BtnNo_Clicked(object sender, EventArgs e)
-        {
-            items.Add("No");
-            lstAnswers.ItemsSource = null;
-            lstAnswers.ItemsSource = items;
-        }
+        
 
         private async void BtnGoToIssue_Clicked(object sender, EventArgs e)
         {

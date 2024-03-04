@@ -29,9 +29,11 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="100"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Entry x:Name="txtName" Grid.Column="0"></Entry>
+            <Entry Grid.Column="0" Text="{Binding Name}"></Entry>
             <Button x:Name="btnSave" Grid.Column="1" Text="Toevoegen" 
-                    Clicked="BtnSave_Clicked"
+                    Command="{Binding AddToItemsCommand}" 
+                    CommandParameter="{Binding Name}"
+                   
                     ></Button>
         </Grid>
 
@@ -42,13 +44,16 @@
 
             </Grid.ColumnDefinitions>
             <Button x:Name="btnYes" Text="Ja" Grid.Column="0"
-                    Clicked="BtnYes_Clicked" Style="{StaticResource btnPrimary}"></Button>
+                    Style="{StaticResource btnPrimary}" Command="{Binding AddToItemsCommand}"
+                    CommandParameter="Ja"
+                    ></Button>
             <Button x:Name="btnNo" Text="Nee" Grid.Column="1"
-                    Clicked="BtnNo_Clicked"
+                    Command="{Binding AddToItemsCommand}"
+                    CommandParameter="Nee"
                     ></Button>
         </Grid>
 
-        <ListView x:Name="lstAnswers">
+        <ListView ItemsSource="{Binding Items}">
             
         </ListView>
         <Button Text="Go to issue nr 123" x:Name="btnGoToIssue" Clicked="BtnGoToIssue_Clicked"></Button>
