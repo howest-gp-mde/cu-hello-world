@@ -20,7 +20,7 @@ namespace HelloWorld.Pages
 
             // lstItems.ItemsSource = mockItems;
             var viewModel = new ItemsViewModel();
-            viewModel.Title = "Een overzicht van alle items";
+            
             this.BindingContext = viewModel;
         }
     }
