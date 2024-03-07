@@ -1,11 +1,12 @@
-﻿using HelloWorld.Domain.Models;
+﻿using FreshMvvm;
+using HelloWorld.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HelloWorld.ViewModels
 {
-    public class ItemsViewModel
+    public class ItemsViewModel: FreshBasePageModel
     {
         public string Title { get; set; }
 

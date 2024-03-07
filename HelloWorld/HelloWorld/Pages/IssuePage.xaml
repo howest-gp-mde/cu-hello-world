@@ -4,7 +4,7 @@
              x:Class="HelloWorld.Pages.IssuePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="" FontSize="Large" x:Name="lblIssue"
+            <Label Text="{Binding IssueNumber}" FontSize="Large" 
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Button Text="Set product state" x:Name="btnState" Clicked="BtnState_Clicked"></Button>

@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace HelloWorld
+namespace HelloWorld.Pages
 {
     public partial class MainPage : ContentPage
     {
@@ -21,7 +21,7 @@ namespace HelloWorld
             InitializeComponent();
 
             MainViewModel model = new MainViewModel();
-            this.BindingContext = model;
+            // this.BindingContext = model;
 
 
             //Label lblNewLabel = new Label();
@@ -54,7 +54,7 @@ namespace HelloWorld
             if (Application.Current.Properties.ContainsKey(ISSUE_NUMBER))
             {
                 issueNumber = (int)Application.Current.Properties[ISSUE_NUMBER];
-                btnGoToIssue.Text = $"Go to issue nr {issueNumber}";
+                // btnGoToIssue.Text = $"Go to issue nr {issueNumber}";
             }
         }
 
@@ -65,10 +65,10 @@ namespace HelloWorld
 
         
 
-        private async void BtnGoToIssue_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new IssuePage(issueNumber));
-        }
+        //private async void BtnGoToIssue_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new IssuePage(issueNumber));
+        //}
 
         private async void BtnGoToRotation_Clicked(object sender, EventArgs e)
         {

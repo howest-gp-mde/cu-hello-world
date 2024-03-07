@@ -1,14 +1,17 @@
-﻿using System;
+﻿using FreshMvvm;
+using HelloWorld.Pages;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace HelloWorld.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainViewModel : FreshBasePageModel
     {
         private ObservableCollection<string> items;
 
@@ -39,6 +42,18 @@ namespace HelloWorld.ViewModels
                 return new Command<string>((string item) =>
                 {
                     Items.Add(item);
+                });
+            }
+        }
+
+        public ICommand GoToIssueCommand
+        {
+            get
+            {
+                return new Command(async () => {
+                    // navigeren naar IssuePage
+                    // await Application.Current.MainPage.Navigation.PushAsync(new IssuePage(123));
+                    await CoreMethods.PushPageModel<IssueViewModel>(125, false, true);
                 });
             }
         }

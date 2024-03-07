@@ -1,4 +1,6 @@
-﻿using HelloWorld.Pages;
+﻿using FreshMvvm;
+using HelloWorld.Pages;
+using HelloWorld.ViewModels;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,8 +12,8 @@ namespace HelloWorld
         public App()
         {
             InitializeComponent();
-
-            this.MainPage = new NavigationPage(new MainPage());
+            var page = FreshPageModelResolver.ResolvePageModel<MainViewModel>();
+            this.MainPage = new FreshNavigationContainer(page);
         }
 
         protected override void OnStart()

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HelloWorld.MainPage">
+             x:Class="HelloWorld.Pages.MainPage">
     <ContentPage.Resources>
         <ResourceDictionary>
          
@@ -56,7 +56,7 @@
         <ListView ItemsSource="{Binding Items}">
             
         </ListView>
-        <Button Text="Go to issue nr 123" x:Name="btnGoToIssue" Clicked="BtnGoToIssue_Clicked"></Button>
+        <Button Text="Go to issue nr 123"  Command="{Binding GoToIssueCommand}"></Button>
         <Button Text="Go to rotationPage" x:Name="btnGoToRotationPage" Clicked="BtnGoToRotation_Clicked"></Button>
     </StackLayout>
 

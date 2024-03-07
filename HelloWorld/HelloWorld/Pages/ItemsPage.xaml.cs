@@ -21,7 +21,7 @@ namespace HelloWorld.Pages
             // lstItems.ItemsSource = mockItems;
             var viewModel = new ItemsViewModel();
             
-            this.BindingContext = viewModel;
+            // this.BindingContext = viewModel;
         }
     }
 }
