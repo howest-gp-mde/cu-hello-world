@@ -3,7 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:HelloWorld.Domain.Models"
              xmlns:viewmodels="clr-namespace:HelloWorld.ViewModels"
+             xmlns:converters="clr-namespace:HelloWorld.Converters"
              x:Class="HelloWorld.Pages.ItemsPage" >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ItemStateToColorConverter x:Key="itemStateToColorConverter"></converters:ItemStateToColorConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Title}" Style="{StaticResource h1}"></Label>
@@ -16,6 +22,12 @@
                                 <StackLayout Orientation="Vertical">
                                     <Label Text="{Binding SerialNumber}"></Label>
                                     <Label Text="{Binding Article.Name}" FontSize="Header"></Label>
+                                    <BoxView 
+                                        WidthRequest="50"
+                                        HeightRequest="5"
+                                        CornerRadius="25"
+                                        BackgroundColor="{Binding State, Converter={StaticResource itemStateToColorConverter}}"
+                                        ></BoxView>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

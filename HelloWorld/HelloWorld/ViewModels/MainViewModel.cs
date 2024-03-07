@@ -46,6 +46,16 @@ namespace HelloWorld.ViewModels
             }
         }
 
+        public ICommand GoToItemsCommand
+        {
+            get
+            {
+                return new Command(async () => {
+                    await CoreMethods.PushPageModel<ItemsViewModel>();
+                });
+            }
+        }
+
         public ICommand GoToIssueCommand
         {
             get
