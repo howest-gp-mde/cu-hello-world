@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+              xmlns:segmentCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
              x:Class="HelloWorld.Pages.MainPage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -22,12 +24,39 @@
                     </OnPlatform>
 
                 </Frame.CornerRadius>
-                <Label FontAttributes="Bold" Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                <Label FontAttributes="Bold" Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"
+                       >
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="UWP">/Fonts/Lato-Italic.ttf#Lato</On>
+                            <On Platform="Android">Lato-Italic.ttf#Lato</On>
+                            <On Platform="iOS">Lato</On>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
             </Frame>
 
             <Image Source="servicedesk.png">
 
             </Image>
+            <buttons:SfSegmentedControl
+            SelectionTextColor = "White"
+            HeightRequest="80"
+            VisibleSegmentsCount="6"
+            Color="Transparent" 
+            BorderColor="#929292"
+            SelectedIndex="1"
+            FontColor="#929292"
+            BackgroundColor="Transparent" >
+                <segmentCollection:List x:TypeArguments="x:String">
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                </segmentCollection:List>
+            </buttons:SfSegmentedControl>
             <Grid HeightRequest="150">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"></ColumnDefinition>

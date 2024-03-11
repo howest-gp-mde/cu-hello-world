@@ -19,7 +19,25 @@
 		<Setter Property="BorderColor" Value="BlanchedAlmond"></Setter>
 	</Style>
 
+    <Style TargetType="Label">
+        <Setter Property="FontFamily">
+            <Setter.Value>
+                <OnPlatform>
+                    <On Platform="UWP">/Fonts/Lato-Regular.tff#Lato</On>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style TargetType="Label" x:Key="h1">
         <Setter Property="FontSize" Value="32"></Setter>
+        <Setter Property="FontFamily">
+            <Setter.Value>
+                <OnPlatform>
+                    <On Platform="UWP">/Fonts/Lato-Regular.ttf#Lato</On>
+                    <On Platform="Android">Lato-Regular.ttf#Lato</On>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>
