@@ -85,7 +85,39 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\drawable-hdpi\icon.png" />
+    <Content Include="Resources\drawable-hdpi\screen.png" />
+    <Content Include="Resources\drawable-land-hdpi\screen.png" />
+    <Content Include="Resources\drawable-land-ldpi\screen.png" />
+    <Content Include="Resources\drawable-land-mdpi\screen.png" />
+    <Content Include="Resources\drawable-land-xhdpi\screen.png" />
+    <Content Include="Resources\drawable-land-xxhdpi\screen.png" />
+    <Content Include="Resources\drawable-land-xxxhdpi\screen.png" />
+    <Content Include="Resources\drawable-land\screen.png" />
+    <AndroidAsset Include="Resources\drawable-ldpi\icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <Content Include="Resources\drawable-ldpi\screen.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <Content Include="Resources\drawable-mdpi\screen.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <Content Include="Resources\drawable-xhdpi\screen.png" />
+    <Content Include="Resources\drawable-xxhdpi\icon.png" />
+    <Content Include="Resources\drawable-xxhdpi\screen.png" />
+    <Content Include="Resources\drawable-xxxhdpi\icon.png" />
+    <Content Include="Resources\drawable-xxxhdpi\screen.png" />
+    <AndroidAsset Include="Resources\drawable\icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Resources\drawable\screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelloWorld\HelloWorld.csproj">
       <Project>{3973B693-20D0-406D-962E-CCD3168EF0D4}</Project>
