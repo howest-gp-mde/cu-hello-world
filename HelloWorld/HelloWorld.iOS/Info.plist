@@ -5,6 +5,7 @@
   <key>UIAppFonts</key>
   <array>
     <string>Fonts/Lato-Regular.ttf</string>
+    <string>Fonts/ComicNeue-Regular.ttf</string>
   </array>
 	<key>UIDeviceFamily</key>
 	<array>

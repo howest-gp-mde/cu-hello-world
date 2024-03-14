@@ -65,39 +65,23 @@
     <Compile Include="Services\MessageServiceDroid.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Lato-Black.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Lato-BlackItalic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Lato-Bold.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Lato-BoldItalic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Lato-Italic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Lato-Light.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Lato-LightItalic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Lato-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Lato-Thin.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Lato-ThinItalic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\NotoSansJP.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
+    <AndroidAsset Include="Assets\Fonts\Lato-Black.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Lato-BlackItalic.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Lato-Bold.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Lato-BoldItalic.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Lato-Italic.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Lato-Light.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Lato-LightItalic.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Lato-Regular.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Lato-Thin.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Lato-ThinItalic.ttf" />
+    <AndroidAsset Include="Assets\Fonts\NotoSansJP.ttf" />
+    <AndroidAsset Include="Assets\Fonts\ComicNeue-Bold.ttf" />
+    <AndroidAsset Include="Assets\Fonts\ComicNeue-BoldItalic.ttf" />
+    <AndroidAsset Include="Assets\Fonts\ComicNeue-Italic.ttf" />
+    <AndroidAsset Include="Assets\Fonts\ComicNeue-Light.ttf" />
+    <AndroidAsset Include="Assets\Fonts\ComicNeue-LightItalic.ttf" />
+    <AndroidAsset Include="Assets\Fonts\ComicNeue-Regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

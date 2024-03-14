@@ -99,6 +99,12 @@
     <BundleResource Include="Resources\Fonts\Lato-ThinItalic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+    <None Include="Resources\Fonts\ComicNeue-Bold.ttf" />
+    <None Include="Resources\Fonts\ComicNeue-BoldItalic.ttf" />
+    <None Include="Resources\Fonts\ComicNeue-Italic.ttf" />
+    <None Include="Resources\Fonts\ComicNeue-Light.ttf" />
+    <None Include="Resources\Fonts\ComicNeue-LightItalic.ttf" />
+    <None Include="Resources\Fonts\ComicNeue-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

@@ -28,9 +28,9 @@
                        >
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="UWP">/Fonts/Lato-Italic.ttf#Lato</On>
-                            <On Platform="Android">Lato-Italic.ttf#Lato</On>
-                            <On Platform="iOS">Lato</On>
+                            <On Platform="UWP">/Fonts/ComicNeue-Regular.ttf#Comic Neue</On>
+                            <On Platform="Android">Fonts/ComicNeue-Regular.ttf#Comic Neue</On>
+                            <On Platform="iOS">Comic Neue</On>
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
