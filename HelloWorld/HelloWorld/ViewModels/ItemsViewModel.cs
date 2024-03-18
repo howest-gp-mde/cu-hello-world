@@ -5,6 +5,8 @@ using HelloWorld.Domain.Services.Mock;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -30,10 +32,22 @@ namespace HelloWorld.ViewModels
             }
         }
 
+        private Item selectedItem;
+
+        public Item SelectedItem
+        {
+            get => selectedItem;
+            set
+            {
+                selectedItem = value;
+
+                // RaisePropertyChanged(nameof(SelectedItem));
+                GoToDetailPage.Execute(null);
+            }
+        }
+
         public ItemsViewModel() {
             _itemService = new MockItemsService();
-
-            
 
             Title = "Een overzicht van alle items";
         }
@@ -55,5 +69,18 @@ namespace HelloWorld.ViewModels
                 });
             }
         }
+
+        public ICommand GoToDetailPage
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    if(SelectedItem != null)
+                        await CoreMethods.PushPageModel<ItemDetailsViewModel>(SelectedItem.Id, false, true);
+                });
+            }
+        }
+      
     }
 }
