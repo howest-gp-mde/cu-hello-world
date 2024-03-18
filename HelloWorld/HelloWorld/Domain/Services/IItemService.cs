@@ -8,5 +8,6 @@ namespace HelloWorld.Domain.Services
     {
         Task<Item> GetItemAsync(int id);
         Task<List<Item>> GetItemsAsync();
+        Task SaveItemAsync(Item item);
     }
 }

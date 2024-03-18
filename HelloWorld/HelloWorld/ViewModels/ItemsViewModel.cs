@@ -58,6 +58,12 @@ namespace HelloWorld.ViewModels
             RefreshData.Execute(null);
         }
 
+        public override void ReverseInit(object returnedData)
+        {
+            base.ReverseInit(returnedData); 
+            RefreshData.Execute(null);
+        }
+
         public ICommand RefreshData
         {
             get
