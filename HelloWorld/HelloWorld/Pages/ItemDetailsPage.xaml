@@ -21,10 +21,11 @@
                 ItemsSource="{Binding Articles}" >
 
                 </Picker>
-
+                   <!-- picker voor locations-->
+                
                 <Button Text="Save" Command="{Binding SaveCommand}"></Button>
             </StackLayout>
-            <!--<BoxView BackgroundColor="White" IsVisible="{Binding IsBusy}"></BoxView>
+            <BoxView BackgroundColor="White" IsVisible="{Binding IsBusy}"></BoxView>
             <ActivityIndicator 
                 IsRunning="{Binding IsBusy}" 
                 IsVisible="{Binding IsBusy}"
@@ -32,7 +33,7 @@
                 VerticalOptions="CenterAndExpand"
                 >
                 
-            </ActivityIndicator>-->
+            </ActivityIndicator>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

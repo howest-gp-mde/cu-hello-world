@@ -14,6 +14,7 @@
 
         public ItemState State { get; set; }
 
+        // aan te passen 
         public string Location { get; set;  }
 
         //public override string ToString()
