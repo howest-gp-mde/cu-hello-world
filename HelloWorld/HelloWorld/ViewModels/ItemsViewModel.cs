@@ -16,8 +16,16 @@ namespace HelloWorld.ViewModels
 {
     public class ItemsViewModel: FreshBasePageModel
     {
-
         private IItemService _itemService;
+
+        private bool isBusy;
+
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set { isBusy = value; RaisePropertyChanged(nameof(IsBusy)); }
+        }
+
 
         public string Title { get; set; }
 
@@ -70,8 +78,10 @@ namespace HelloWorld.ViewModels
             {
                 return new Command(async () =>
                 {
+                    IsBusy = true;
                     List<Item> fetchedItems = await _itemService.GetItemsAsync();
                     Items = new ObservableCollection<Item>(fetchedItems);
+                    IsBusy = false;
                 });
             }
         }

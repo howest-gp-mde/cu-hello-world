@@ -11,29 +11,42 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Title}" Style="{StaticResource h1}"></Label>
-            <ListView x:Name="lstItems" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Article.ImageUrl}" WidthRequest="250" Aspect="AspectFit"/>
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding SerialNumber}"></Label>
-                                    <Label Text="{Binding Article.Name}" FontSize="Header"></Label>
-                                    <BoxView 
+        <AbsoluteLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+            <StackLayout>
+                <Label Text="{Binding Title}" Style="{StaticResource h1}"></Label>
+                <ListView x:Name="lstItems" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Article.ImageUrl}" WidthRequest="250" Aspect="AspectFit"/>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding SerialNumber}"></Label>
+                                        <Label Text="{Binding Article.Name}" FontSize="Header"></Label>
+                                        <BoxView 
                                         WidthRequest="50"
                                         HeightRequest="5"
                                         CornerRadius="25"
                                         BackgroundColor="{Binding State, Converter={StaticResource itemStateToColorConverter}}"
                                         ></BoxView>
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsBusy}" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+
+                <ActivityIndicator 
+          IsRunning="{Binding IsBusy}"
+          HorizontalOptions="CenterAndExpand"
+          VerticalOptions="CenterAndExpand"
+          >
+
+                </ActivityIndicator>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
