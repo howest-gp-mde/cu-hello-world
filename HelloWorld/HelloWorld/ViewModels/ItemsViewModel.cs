@@ -17,7 +17,7 @@ namespace HelloWorld.ViewModels
     public class ItemsViewModel: FreshBasePageModel
     {
 
-        private IItemsService _itemService;
+        private IItemService _itemService;
 
         public string Title { get; set; }
 
@@ -47,7 +47,7 @@ namespace HelloWorld.ViewModels
         }
 
         public ItemsViewModel() {
-            _itemService = new MockItemsService();
+            _itemService = new MockItemService();
 
             Title = "Een overzicht van alle items";
         }

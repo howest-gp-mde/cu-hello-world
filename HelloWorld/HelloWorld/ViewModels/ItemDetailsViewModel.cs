@@ -15,7 +15,7 @@ namespace HelloWorld.ViewModels
 {
     public class ItemDetailsViewModel : FreshBasePageModel
     {
-        IItemsService _itemsService;
+        IItemService _itemsService;
         IArticleService _articleService;
 
         private string errorText;
@@ -82,7 +82,7 @@ namespace HelloWorld.ViewModels
 
         public ItemDetailsViewModel()
         {
-            _itemsService = new MockItemsService();
+            _itemsService = new MockItemService();
             _articleService = new MockArticleService();
         }
 

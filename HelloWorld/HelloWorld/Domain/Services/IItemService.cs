@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld.Domain.Services
 {
-    public interface IItemsService
+    public interface IItemService
     {
         Task<Item> GetItemAsync(int id);
         Task<List<Item>> GetItemsAsync();

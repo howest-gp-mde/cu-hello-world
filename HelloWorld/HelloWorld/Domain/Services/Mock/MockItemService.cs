@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace HelloWorld.Domain.Services.Mock
 {
-    public class MockItemsService : IItemsService
+    public class MockItemService : IItemService
     {
         private static List<Item> _items;
-        public MockItemsService()
+        public MockItemService()
         {
             if(_items == null)
             {
