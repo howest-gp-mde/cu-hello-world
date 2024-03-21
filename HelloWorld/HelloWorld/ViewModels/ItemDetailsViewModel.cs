@@ -80,10 +80,10 @@ namespace HelloWorld.ViewModels
         }
 
 
-        public ItemDetailsViewModel()
+        public ItemDetailsViewModel(IItemService itemService, IArticleService articleService)
         {
-            _itemsService = new MockItemService();
-            _articleService = new MockArticleService();
+            _itemsService = itemService;
+            _articleService = articleService;
         }
 
         public override void Init(object initData)

@@ -46,8 +46,8 @@ namespace HelloWorld.ViewModels
             }
         }
 
-        public ItemsViewModel() {
-            _itemService = new MockItemService();
+        public ItemsViewModel(IItemService itemService) {
+            _itemService = itemService;
 
             Title = "Een overzicht van alle items";
         }

@@ -19,7 +19,7 @@ namespace HelloWorld.Pages
             InitializeComponent();
 
             // lstItems.ItemsSource = mockItems;
-            var viewModel = new ItemsViewModel();
+            // var viewModel = new ItemsViewModel();
             
             // this.BindingContext = viewModel;
         }
