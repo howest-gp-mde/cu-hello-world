@@ -18,6 +18,14 @@ namespace HelloWorld.ViewModels
         IItemService _itemsService;
         IArticleService _articleService;
 
+        private bool isBusy;
+
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set { isBusy = value; RaisePropertyChanged(nameof(IsBusy)); }
+        }
+
         private string errorText;
 
         public string ErrorText
@@ -101,6 +109,7 @@ namespace HelloWorld.ViewModels
             {
                 return new Command(async () =>
                 {
+                    IsBusy = true;
                     Articles = new ObservableCollection<Article>(
                         await _articleService.GetArticlesAsync()
                         );
@@ -108,6 +117,7 @@ namespace HelloWorld.ViewModels
                     SelectedArticle = item.Article;
                     SerialNumber = item.SerialNumber;
                     IsAvailable = item.IsAvailable;
+                    IsBusy = false;
 
                 });
             }

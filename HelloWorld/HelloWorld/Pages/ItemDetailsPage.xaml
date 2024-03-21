@@ -3,25 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HelloWorld.Pages.ItemDetailsPage">
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Label Text="{Binding ErrorText}" TextColor="Red"></Label>
-            <Label Text="{Binding Id}"></Label>
-            
-            <Label Text="Serial Number"></Label>
-            <Entry Text="{Binding SerialNumber}"></Entry>
-            <Label Text="{Binding SerialNumberError}" TextColor="Red"></Label>
-            
-            <Label Text="IsAvailable"></Label>
-            <Switch IsToggled="{Binding IsAvailable}"></Switch>
+        <Grid>
+            <StackLayout Padding="20">
+                <Label Text="{Binding ErrorText}" TextColor="Red"></Label>
+                <Label Text="{Binding Id}"></Label>
 
-            <Label Text="Article"></Label>
-            <Picker 
+                <Label Text="Serial Number"></Label>
+                <Entry Text="{Binding SerialNumber}"></Entry>
+                <Label Text="{Binding SerialNumberError}" TextColor="Red"></Label>
+
+                <Label Text="IsAvailable"></Label>
+                <Switch IsToggled="{Binding IsAvailable}"></Switch>
+
+                <Label Text="Article"></Label>
+                <Picker 
                 SelectedItem="{Binding SelectedArticle}" 
                 ItemsSource="{Binding Articles}" >
-                
-            </Picker>
 
-            <Button Text="Save" Command="{Binding SaveCommand}"></Button>
-        </StackLayout>
+                </Picker>
+
+                <Button Text="Save" Command="{Binding SaveCommand}"></Button>
+            </StackLayout>
+            <!--<BoxView BackgroundColor="White" IsVisible="{Binding IsBusy}"></BoxView>
+            <ActivityIndicator 
+                IsRunning="{Binding IsBusy}" 
+                IsVisible="{Binding IsBusy}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                >
+                
+            </ActivityIndicator>-->
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
