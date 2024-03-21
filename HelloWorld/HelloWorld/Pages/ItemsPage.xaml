@@ -22,7 +22,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="{Binding Article.ImageUrl}" WidthRequest="250" Aspect="AspectFit"/>
                                     <StackLayout Orientation="Vertical">
-                                        <!-- add location -->
+                                        <Label Text="{Binding Location}"></Label>
                                         <Label Text="{Binding SerialNumber}"></Label>
                                         <Label Text="{Binding Article.Name}" FontSize="Header"></Label>
                                         <BoxView 

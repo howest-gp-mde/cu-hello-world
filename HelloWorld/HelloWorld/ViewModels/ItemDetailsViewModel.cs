@@ -70,6 +70,15 @@ namespace HelloWorld.ViewModels
             }
         }
 
+        private Location selectedLocation;
+
+        public Location SelectedLocation
+        {
+            get { return selectedLocation; }
+            set { selectedLocation = value; RaisePropertyChanged(nameof(SelectedLocation)); }
+        }
+
+
         private Article selectedArticle;
         public Article SelectedArticle { get => selectedArticle; set { selectedArticle = value; RaisePropertyChanged(nameof(SelectedArticle)); } }
 
@@ -87,11 +96,25 @@ namespace HelloWorld.ViewModels
             }
         }
 
+        private ObservableCollection<Location> locations;
+        private ILocationService _locationService;
 
-        public ItemDetailsViewModel(IItemService itemService, IArticleService articleService)
+        public ObservableCollection<Location> Locations
+        {
+            get { return locations; }
+            set { locations = value; RaisePropertyChanged(nameof(Locations)); }
+        }
+
+
+
+        public ItemDetailsViewModel(
+            IItemService itemService, 
+            IArticleService articleService,
+            ILocationService locationService)
         {
             _itemsService = itemService;
             _articleService = articleService;
+            _locationService = locationService;
         }
 
         public override void Init(object initData)
@@ -110,11 +133,13 @@ namespace HelloWorld.ViewModels
                 return new Command(async () =>
                 {
                     IsBusy = true;
+                    Locations = new ObservableCollection<Location>(await _locationService.GetLocations());
                     Articles = new ObservableCollection<Article>(
                         await _articleService.GetArticlesAsync()
                         );
                     var item = await _itemsService.GetItemAsync(Id);
                     SelectedArticle = item.Article;
+                    SelectedLocation = item.Location;
                     SerialNumber = item.SerialNumber;
                     IsAvailable = item.IsAvailable;
                     IsBusy = false;
@@ -134,6 +159,7 @@ namespace HelloWorld.ViewModels
                     item.SerialNumber = SerialNumber;
                     item.Article = SelectedArticle;
                     item.IsAvailable = IsAvailable;
+                    item.Location = SelectedLocation;
 
                     if (Validate(item))
                     {

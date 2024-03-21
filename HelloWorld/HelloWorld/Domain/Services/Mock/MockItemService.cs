@@ -52,6 +52,7 @@ namespace HelloWorld.Domain.Services.Mock
             existingItem.SerialNumber = item.SerialNumber;
             existingItem.Article = item.Article;
             existingItem.IsAvailable = item.IsAvailable;
+            existingItem.Location = item.Location;
 
         }
     }

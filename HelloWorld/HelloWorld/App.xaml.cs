@@ -1,5 +1,6 @@
 ﻿using FreshMvvm;
 using HelloWorld.Domain.Services;
+using HelloWorld.Domain.Services.Api;
 using HelloWorld.Domain.Services.Mock;
 using HelloWorld.Pages;
 using HelloWorld.ViewModels;
@@ -24,6 +25,7 @@ namespace HelloWorld
                 .Register<IItemService, MockItemService>()
                 .AsMultiInstance();
             FreshIOC.Container.Register<IArticleService, MockArticleService>();
+            FreshIOC.Container.Register<ILocationService, ApiLocationService>();
         }
 
         protected override void OnStart()

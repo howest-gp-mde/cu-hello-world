@@ -22,7 +22,12 @@
 
                 </Picker>
                    <!-- picker voor locations-->
-                
+                <Label Text="Location"></Label>
+                <Picker 
+                    SelectedItem="{Binding SelectedLocation}" 
+                    ItemsSource="{Binding Locations}" >
+
+                </Picker>
                 <Button Text="Save" Command="{Binding SaveCommand}"></Button>
             </StackLayout>
             <BoxView BackgroundColor="White" IsVisible="{Binding IsBusy}"></BoxView>
