@@ -1,4 +1,6 @@
-﻿namespace HelloWorld.Api.DTO.Response
+﻿using System.Collections.Generic;
+
+namespace HelloWorld.DTO.HelloWorldApi
 {
     public class ResponseDTO<T>
     {

@@ -26,7 +26,7 @@ namespace HelloWorld.Api.Controllers
                 Count = articles.Count,
                 Results = articles
                 .Select(a =>
-                new ArticleDTO { Id = a.Id, Name = a.Name, Description = a.Description, ImageUrl = a.ImageUrl }
+                    new ArticleDTO { Id = a.Id, Name = a.Name, Description = a.Description, ImageUrl = a.ImageUrl }
                 ).ToList()
             });
         }
