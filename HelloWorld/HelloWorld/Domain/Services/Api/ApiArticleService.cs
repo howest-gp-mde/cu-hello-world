@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld.Domain.Services.Api
 {
-    internal class ApiArticleService : IArticleService
+    public class ApiArticleService : IArticleService
     {
         public async Task<List<Article>> GetArticlesAsync()
         {

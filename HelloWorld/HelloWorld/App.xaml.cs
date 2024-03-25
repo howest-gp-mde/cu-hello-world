@@ -22,9 +22,9 @@ namespace HelloWorld
 
             // Set dependencies
             FreshIOC.Container
-                .Register<IItemService, MockItemService>()
+                .Register<IItemService, ApiItemService>()
                 .AsMultiInstance();
-            FreshIOC.Container.Register<IArticleService, MockArticleService>();
+            FreshIOC.Container.Register<IArticleService, ApiArticleService>();
             FreshIOC.Container.Register<ILocationService, ApiLocationService>();
         }
 

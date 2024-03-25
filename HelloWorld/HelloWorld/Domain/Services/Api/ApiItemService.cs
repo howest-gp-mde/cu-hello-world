@@ -14,7 +14,6 @@ namespace HelloWorld.Domain.Services.Api
 {
     public class ApiItemService: IItemService
     {
-        const string BaseUrl = "https://localhost:7253/api";
 
         public Task<Item> GetItemAsync(int id)
         {
@@ -26,7 +25,7 @@ namespace HelloWorld.Domain.Services.Api
             using (var client = new HttpClient())
             {
 
-                var itemResponse = await client.GetFromJsonAsync<ResponseDTO<ItemDTO>>(BaseUrl + "/items");
+                var itemResponse = await client.GetFromJsonAsync<ResponseDTO<ItemDTO>>(Constants.BaseUrl + "/items");
 
                 return itemResponse.Results
                     .Select(i => new Item
@@ -43,7 +42,7 @@ namespace HelloWorld.Domain.Services.Api
         {
             using(var client = new HttpClient()) {
 
-                var response = await client.PostAsJsonAsync(BaseUrl + "/items", item);
+                var response = await client.PostAsJsonAsync(Constants.BaseUrl + "/items", item);
             }
         }
 
