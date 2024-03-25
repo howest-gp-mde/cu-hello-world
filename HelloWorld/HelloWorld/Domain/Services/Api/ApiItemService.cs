@@ -7,12 +7,14 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
+using System.Net.Http.Json;
 
 namespace HelloWorld.Domain.Services.Api
 {
-    internal class ApiItemService: IItemService
+    public class ApiItemService: IItemService
     {
-        const string BaseUrl = "https://localhost:7253";
+        const string BaseUrl = "https://localhost:7253/api";
 
         public Task<Item> GetItemAsync(int id)
         {
@@ -23,9 +25,8 @@ namespace HelloWorld.Domain.Services.Api
         {
             using (var client = new HttpClient())
             {
-                var response = await client.GetStringAsync(BaseUrl + "/items");
-                ResponseDTO<ItemDTO> itemResponse =
-                    JsonConvert.DeserializeObject<ResponseDTO<ItemDTO>>(response);
+
+                var itemResponse = await client.GetFromJsonAsync<ResponseDTO<ItemDTO>>(BaseUrl + "/items");
 
                 return itemResponse.Results
                     .Select(i => new Item
@@ -38,9 +39,14 @@ namespace HelloWorld.Domain.Services.Api
             }
         }
 
-        public Task SaveItemAsync(Item item)
+        public async Task SaveItemAsync(Item item)
         {
-            throw new NotImplementedException();
+            using(var client = new HttpClient()) {
+
+                var response = await client.PostAsJsonAsync(BaseUrl + "/items", item);
+            }
         }
+
+       
     }
 }

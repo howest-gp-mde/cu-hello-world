@@ -80,12 +80,7 @@ namespace HelloWorld.Api.Controllers
                 SerialNumber = item.SerialNumber,
             }) ;
 
-            if (item == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(item);
+            return Ok(id);
         }
 
 

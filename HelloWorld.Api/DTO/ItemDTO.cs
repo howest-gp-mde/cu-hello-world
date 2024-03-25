@@ -2,7 +2,7 @@
 
 namespace HelloWorld.Api.DTO
 {
-    public class ItemDTO: IResponseDTO
+    public class ItemDTO
     { 
         public int Id { get; set; }
         public string SerialNumber { get; set; }
