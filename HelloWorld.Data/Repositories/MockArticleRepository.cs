@@ -61,5 +61,23 @@ namespace HelloWorld.Data.Repositories
             _articles.Remove(article);
             await Task.Delay(200);
         }
+
+        public async Task<int> CreateArticleASync(Article article)
+        {
+            int id = _articles.Max(a => a.Id) + 1;
+            article.Id = id;
+            _articles.Add(article);
+            await Task.Delay(200);
+            return id;
+        }
+
+        public async Task UpdateArticleAsync(int id, Article article)
+        {
+            await DeleteArticleAsync(id);
+
+            _articles.Add(article);
+
+            await Task.Delay(200);
+        }
     }
 }

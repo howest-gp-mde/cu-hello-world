@@ -5,6 +5,7 @@ using HelloWorld.Domain.Services.Mock;
 using HelloWorld.Pages;
 using HelloWorld.ViewModels;
 using System;
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,6 +27,7 @@ namespace HelloWorld
                 .AsMultiInstance();
             FreshIOC.Container.Register<IArticleService, ApiArticleService>();
             FreshIOC.Container.Register<ILocationService, ApiLocationService>();
+            FreshIOC.Container.Register<HttpClient>(new HttpClient());
         }
 
         protected override void OnStart()

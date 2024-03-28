@@ -12,9 +12,13 @@ namespace HelloWorld.Domain.Services.Api
 {
     public class ApiArticleService : IArticleService
     {
+        public ApiArticleService()
+        {
+        }
+
         public async Task<List<Article>> GetArticlesAsync()
         {
-            using (var client = new HttpClient())
+            using (HttpClient client = new HttpClient())
             {
                 var response =
                     await client
@@ -28,6 +32,7 @@ namespace HelloWorld.Domain.Services.Api
                     Name = a.Name
                 }).ToList();
             }
+
         }
     }
 }

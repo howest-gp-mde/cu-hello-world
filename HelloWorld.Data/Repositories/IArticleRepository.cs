@@ -4,9 +4,10 @@ namespace HelloWorld.Data.Repositories
 {
     public interface IArticleRepository
     {
-        Task DeleteArticleAsync(int articleId);
-        Task<Article> GetArticleAsync(int id);
         Task<List<Article>> GetArticlesAsync();
-        Task UpdateArticleAsync(Article article);
+        Task<Article> GetArticleAsync(int id);
+        Task<int> CreateArticleASync(Article article);
+        Task UpdateArticleAsync(int id, Article article);
+        Task DeleteArticleAsync(int articleId);
     }
 }

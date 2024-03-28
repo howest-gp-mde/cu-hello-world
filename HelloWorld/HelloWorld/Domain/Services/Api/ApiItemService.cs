@@ -12,8 +12,12 @@ using System.Net.Http.Json;
 
 namespace HelloWorld.Domain.Services.Api
 {
-    public class ApiItemService: IItemService
+    public class ApiItemService : IItemService
     {
+        public ApiItemService()
+        {
+            
+        }
 
         public Task<Item> GetItemAsync(int id)
         {
@@ -22,30 +26,33 @@ namespace HelloWorld.Domain.Services.Api
 
         public async Task<List<Item>> GetItemsAsync()
         {
-            using (var client = new HttpClient())
+            using (HttpClient client = new HttpClient())
             {
 
                 var itemResponse = await client.GetFromJsonAsync<ResponseDTO<ItemDTO>>(Constants.BaseUrl + "/items");
 
-                return itemResponse.Results
-                    .Select(i => new Item
-                    {
-                        Id = i.Id,
-                        Article = new Article { ImageUrl = i.Article.ImageUrl, Name = i.Article.Name },
-                        IsAvailable = true,
-                        SerialNumber = i.SerialNumber,
-                    }).ToList();
+            return itemResponse.Results
+                .Select(i => new Item
+                {
+                    Id = i.Id,
+                    Article = new Article { ImageUrl = i.Article.ImageUrl, Name = i.Article.Name },
+                    IsAvailable = true,
+                    SerialNumber = i.SerialNumber,
+                }).ToList();
             }
+
         }
 
         public async Task SaveItemAsync(Item item)
         {
-            using(var client = new HttpClient()) {
-
+            using(HttpClient client = new HttpClient())
+            {
                 var response = await client.PostAsJsonAsync(Constants.BaseUrl + "/items", item);
             }
+
+
         }
 
-       
+
     }
 }
