@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Input;
@@ -70,9 +73,19 @@ namespace HelloWorld.ViewModels
 
         public MainViewModel()
         {
-            Items = new ObservableCollection<string>(new List<string> {
-                "Ja", "Nee", "Joske Vermeulen", "Tramesante Lei"
-            });
+            //Items = new ObservableCollection<string>(new List<string> {
+            //    "Ja", "Nee", "Joske Vermeulen", "Tramesante Lei"
+            //});
+
+            var assembly = typeof(MainViewModel).GetTypeInfo().Assembly;
+            Stream stream =
+                assembly.GetManifestResourceStream("HelloWorld.Files.first-items.txt");
+            using (var reader = new StreamReader(stream))
+            {
+                Items = new ObservableCollection<string>(
+                    reader.ReadToEnd().Split('\n').ToList()
+                    );
+            }
         }
 
     }
